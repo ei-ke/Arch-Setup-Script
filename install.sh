@@ -259,8 +259,9 @@ sed -i "s#quiet#cryptdevice=UUID=$UUID:cryptroot root=$BTRFS lsm=landlock,lockdo
 sed -i 's#FILES=()#FILES=(/cryptkey/.root.key)#g' /mnt/etc/mkinitcpio.conf
 
 # Configure AppArmor Parser caching
-sed -i 's/#write-cache/write-cache/g' /etc/apparmor/parser.conf
-sed -i 's,#Include /etc/apparmor.d/,Include /etc/apparmor.d/#g' /etc/apparmor/parser.conf
+#/mnt was missing
+sed -i 's/#write-cache/write-cache/g' /mnt/etc/apparmor/parser.conf
+sed -i 's,#Include /etc/apparmor.d/,Include /mnt/etc/apparmor.d/#g' /etc/apparmor/parser.conf
 
 # Blacklisting kernel modules
 curl https://raw.githubusercontent.com/Whonix/security-misc/master/etc/modprobe.d/30_security-misc.conf >> /mnt/etc/modprobe.d/30_security-misc.conf
