@@ -8,10 +8,11 @@ clear
 mount -o remount,size=2G /run/archiso/cowspace
 
 # Updating the live environment
-pacman -Syu
+#seems do break the dm crypt module due to the kernel update?
+#pacman -Syu
 
 # Installing curl
-pacman -S --noconfirm curl
+pacman -Sy --noconfirm curl
 
 # Selecting the kernel flavor to install.
 kernel_selector () {
