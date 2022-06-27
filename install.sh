@@ -3,9 +3,9 @@
 # Cleaning the TTY.
 clear
 
-# Enlarge cowspace of live cd
+# Enlarge cowspace of live cd for pacman -Syu
 
-mount -o remount,size=2G /run/archiso/cowspace
+#mount -o remount,size=2G /run/archiso/cowspace
 
 # Updating the live environment
 #seems do break the dm crypt module due to the kernel update?
